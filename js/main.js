@@ -10,19 +10,14 @@ console.log(pow(2, 5));
 
 // 2. Реализовать вывод в консоль скобок (// bracketWrapper3(3); // => сразу в консоль)
 const bracketWrapper3 = n => {
-  const brackets = [];
-
-  const bracketWrapperRec = n => { 
-    if (n === 0) {
-      return;
-    }
-    brackets.push('('); 
-    bracketWrapperRec(n - 1);
-    brackets.push(')');
+  if (n === 0) {
+    return;
   }
-  bracketWrapperRec(n);
-  console.log(brackets.join(''));
+  console.log('('); 
+  bracketWrapper3(n - 1);
+  console.log(')');
 }
+
 bracketWrapper3(3);
 
 // 3. ** Реализовать функцию аналог flat для массивов. (https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/flat)
